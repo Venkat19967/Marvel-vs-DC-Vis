@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // console.log("lineHeight:" + String(height));
 
 
-  svgScatter = d3.select("#marvel").append('g')
-    .attr("transform","translate(" + (600 - width)/2 + "," + (600 - height)/2 + ")");
+  svgColumn = d3.select("#marvel").append('g')
+  .attr("transform","translate(" + ((600 - width)/2 - 40) + "," + (600 - height)/2 + ")");
 
-  svgColumn = d3.select("#dc")
+  svgScatter = d3.select("#dc")
   .append('g')
-    .attr("transform","translate(" + ((600 - width)/2 - 40) + "," + (600 - height)/2 + ")");
+  .attr("transform","translate(" + (600 - width)/2 + "," + (600 - height)/2 + ")");
 
-
+    
   div = d3.select("body").append("div")
   .attr("class", "tooltip-map")
   .style("opacity", 0);
@@ -101,13 +101,13 @@ function drawScatter(data) {
       div.transition()
         .duration(50)
         .style("opacity", 1);
-      div.html(`Country`)
+      div.html(`Movie: ${d.movie}</br>IMDB rating: ${d.imdb}</br>Year: ${d.year}</br>Budget: ${d.budget}</br>`)
       .style("left", (d3.event.pageX) + 10 + "px")
       .style("top", (d3.event.pageY) + 10 + "px");
     })
     .on('mousemove',function(d,i) {
       // console.log('mousemove on ' + d.properties.name);
-      div.html(`Country`)
+      div.html(`Movie: ${d.movie}</br>IMDB rating: ${d.imdb}</br>Year: ${d.year}</br>Budget: ${d.budget}</br>`)
       .style("left", (d3.event.pageX) + 10 + "px")
       .style("top", (d3.event.pageY) + 10 + "px");
     })
@@ -128,6 +128,62 @@ function drawScatter(data) {
     .attr("x2", width)
     .attr("y2", 0)
     .attr("transform", "translate(0," + 103 + ")");
+
+    svgScatter.append('line')
+    .style("stroke", "black")
+    .style("stroke-width", 0.5)
+    .attr("x1", 0)
+    .attr("y1", 0)
+    .attr("x2", 0)
+    .attr("y2", width-10)
+    .attr("transform", "translate("+ 170 + "," + 0 + ")");
+
+    svgScatter.append("text")
+        .attr("text-anchor", "middle")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -margin.left+20)
+        .attr("x", -height/2)
+        .attr("font-weight",700)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "14px")
+        .text("IMDB ratings")
+
+    svgScatter.append("text")
+        .attr("text-anchor", "middle")
+        .attr("x", width/2)
+        .attr("y", height + margin.top + 27)
+        .attr("font-weight",700)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "14px")
+        .text("Budget of the movies - Millions(M) in $");
+
+    svgScatter.append("rect")
+        .attr("x", width+5)
+        .attr("y", 0)
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("fill", 'red');
+
+    svgScatter.append("text")
+        .attr("x", width + 25)
+        .attr("y", 10)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .text("Marvel Movies");
+
+    svgScatter.append("rect")
+        .attr("x", width +5)
+        .attr("y", 25)
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("fill", 'blue' );
+
+      svgScatter.append("text")
+        .attr("x", width + 25)
+        .attr("y", 35)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .text("DC Movies");
 }
 
 
@@ -179,13 +235,13 @@ function drawOther(data){
     div.transition()
       .duration(50)
       .style("opacity", 1);
-    div.html(`Country`)
+    div.html(`Movie: ${d.movie}</br>IMDB rating: ${d.imdb}</br>Year: ${d.year}</br>Gross revenue: ${d.gross}</br>Budget: ${d.budget}`)
     .style("left", (d3.event.pageX) + 10 + "px")
     .style("top", (d3.event.pageY) + 10 + "px");
   })
   .on('mousemove',function(d,i) {
     // console.log('mousemove on ' + d.properties.name);
-    div.html(`Country`)
+    div.html(`Movie: ${d.movie}</br>IMDB rating: ${d.imdb}</br>Year: ${d.year}</br>Gross revenue: ${d.gross}</br>Budget: ${d.budget}`)
     .style("left", (d3.event.pageX) + 10 + "px")
     .style("top", (d3.event.pageY) + 10 + "px");
   })
@@ -199,5 +255,52 @@ function drawOther(data){
   });
 
 
+
+  svgColumn.append("text")
+        .attr("text-anchor", "middle")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -margin.left+ 5)
+        .attr("x", -height/2)
+        .attr("font-weight",700)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "14px")
+        .text("Gross revenue across the globe - Millions(M) in $")
+
+    svgColumn.append("text")
+        .attr("text-anchor", "middle")
+        .attr("x", width/2 + 20)
+        .attr("y", height + margin.top + 100)
+        .attr("font-weight",700)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "14px")
+        .text("Names of the movies");
+
+    svgColumn.append("rect")
+        .attr("x", width+15)
+        .attr("y", 0)
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("fill", 'red');
+
+    svgColumn.append("text")
+        .attr("x", width + 35)
+        .attr("y", 10)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .text("Marvel Movies");
+
+    svgColumn.append("rect")
+        .attr("x", width +15)
+        .attr("y", 25)
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("fill", 'blue' );
+
+      svgColumn.append("text")
+        .attr("x", width + 35)
+        .attr("y", 35)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .text("DC Movies");
 }
 

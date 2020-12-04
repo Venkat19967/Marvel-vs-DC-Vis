@@ -29,6 +29,13 @@ h2, h3 {
   text-align:center;
 }
 
+p{
+  text-align:center;
+  text-align: justify;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
 div.tooltip-map {
   position: absolute;
   text-align: left;
@@ -41,7 +48,7 @@ div.tooltip-map {
   font-size: 1.3rem;
 }
 
-#dc{
+#marvel{
   background-image: url(../images/MarvelLogo.svg);
   background-repeat: no-repeat;
   background-position: 10px 10px;
@@ -50,7 +57,7 @@ div.tooltip-map {
   /* background-blend-mode: luminosity; */
 }
 
-#marvel{
+#dc{
   background-image: url(../images/dc.svg);
   background-repeat: no-repeat;
   background-position: right top ;
@@ -66,6 +73,7 @@ body {
 
 #bkgclr{
   background-color: cornsilk;
-  border-radius: 8px;
   opacity: 0.8;
+  border:1px solid gray;
+  border-radius:10px;
 }
