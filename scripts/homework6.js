@@ -25,34 +25,22 @@ document.addEventListener('DOMContentLoaded', function() {
   lineInnerWidth = lineWidth - lineMargin.left - lineMargin.right;
   lineInnerHeight = lineHeight - lineMargin.top - lineMargin.bottom;
 
-  console.log("lineWidth:" + String(width));
-  console.log("lineHeight:" + String(height));
-
-
-
+  // console.log("lineWidth:" + String(width));
+  // console.log("lineHeight:" + String(height));
 
 
   svgScatter = d3.select("#marvel").append('g')
     .attr("transform","translate(" + (600 - width)/2 + "," + (600 - height)/2 + ")");
-  // .append("svg")
-  //   .attr("width", width + margin.left + margin.right + 100)
-  //   .attr("height", height + margin.top + margin.bottom)
-  //   .attr("transform",
-  //         "translate(" +  + "," + 10 + ")");
-  // .append("g")
-  //   .attr("transform",
-  //         "translate(" + margin.left + "," + 60 + ")");
-
 
   svgColumn = d3.select("#dc")
   .append('g')
-    .attr("transform","translate(" + (600 - width)/2 + "," + (600 - height)/2 + ")");
-  // .append("svg")
-  //   .attr("width", width + margin.left + margin.right +100)
-  //   .attr("height", height + margin.top + margin.bottom + 100)
-  // .append("g")
-  //   .attr("transform",
-  //         "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform","translate(" + ((600 - width)/2 - 40) + "," + (600 - height)/2 + ")");
+
+
+  div = d3.select("body").append("div")
+  .attr("class", "tooltip-map")
+  .style("opacity", 0);
+
 
   d3.json('../data/db.json')
   .then(function (data) {
@@ -64,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+
+function formatTick(d) {
+  const s = (d / 1e6);
+  return  `$${s}M`;
+}
+
+
 function drawScatter(data) {
 
   var x = d3.scaleLinear()
@@ -72,17 +67,16 @@ function drawScatter(data) {
 
   svgScatter.append("g")
   .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(x).ticks(9.5).tickFormat(d3.format(".2s")) );
+  .call(d3.axisBottom(x).ticks(9.5).tickFormat(formatTick) );
 
 // Add Y axis
-
   var y = d3.scaleLinear()
   .domain([3, 10])
   .range([ height, 0]);
 
   svgScatter.append("g")
   .call(d3.axisLeft(y));
-
+  
 // Add dots
   svgScatter.append('g')
   .selectAll("dot")
@@ -99,15 +93,50 @@ function drawScatter(data) {
       else{
         return 'blue';
       }
+    })
+    .on('mouseover', function(d,i) {
+      // console.log('mouseover on ' +yearData[d.properties.name]);
+      d3.select(this).transition()
+        .attr('class', 'countrymap_hover');
+      div.transition()
+        .duration(50)
+        .style("opacity", 1);
+      div.html(`Country`)
+      .style("left", (d3.event.pageX) + 10 + "px")
+      .style("top", (d3.event.pageY) + 10 + "px");
+    })
+    .on('mousemove',function(d,i) {
+      // console.log('mousemove on ' + d.properties.name);
+      div.html(`Country`)
+      .style("left", (d3.event.pageX) + 10 + "px")
+      .style("top", (d3.event.pageY) + 10 + "px");
+    })
+    .on('mouseout', function(d,i) {
+      // console.log('mouseout on ' + d.properties.name);
+      d3.select(this).transition()
+               .attr('class', 'countrymap');
+      div.transition()
+               .duration(50)
+               .style("opacity", 0);
     });
+
+    svgScatter.append('line')
+    .style("stroke", "black")
+    .style("stroke-width", 0.5)
+    .attr("x1", 0)
+    .attr("y1", 0)
+    .attr("x2", width)
+    .attr("y2", 0)
+    .attr("transform", "translate(0," + 103 + ")");
 }
+
 
 
 function drawOther(data){
 
   // X axis
   var x = d3.scaleBand()
-  .range([ 0, width +70 ])
+  .range([ 0, width + 100 ])
   .domain(data.map(function(d) { return d.movie; }))
   .padding(0.2);
   
@@ -124,7 +153,7 @@ function drawOther(data){
   .domain([10903312,2797800564])
   .range([ height, 0]);
   svgColumn.append("g")
-  .call(d3.axisLeft(y).tickFormat(d3.format(".1s")));
+  .call(d3.axisLeft(y).tickFormat(formatTick));
 
 // Bars
   svgColumn.selectAll("mybar")
@@ -142,6 +171,31 @@ function drawOther(data){
     else{
       return 'blue';
     }
+  })
+  .on('mouseover', function(d,i) {
+    // console.log('mouseover on ' +yearData[d.properties.name]);
+    d3.select(this).transition()
+      .attr('class', 'countrymap_hover');
+    div.transition()
+      .duration(50)
+      .style("opacity", 1);
+    div.html(`Country`)
+    .style("left", (d3.event.pageX) + 10 + "px")
+    .style("top", (d3.event.pageY) + 10 + "px");
+  })
+  .on('mousemove',function(d,i) {
+    // console.log('mousemove on ' + d.properties.name);
+    div.html(`Country`)
+    .style("left", (d3.event.pageX) + 10 + "px")
+    .style("top", (d3.event.pageY) + 10 + "px");
+  })
+  .on('mouseout', function(d,i) {
+    // console.log('mouseout on ' + d.properties.name);
+    d3.select(this).transition()
+             .attr('class', 'countrymap');
+    div.transition()
+             .duration(50)
+             .style("opacity", 0);
   });
 
 

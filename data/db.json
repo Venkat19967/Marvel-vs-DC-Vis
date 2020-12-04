@@ -32,7 +32,7 @@
         "budget": "150000000"
     },
     {
-        "movie": "Captain America: The First Avenger",
+        "movie": "The First Avenger",
         "company": "Marvel",
         "imdb": 6.9,
         "gross": "370569774",
@@ -64,7 +64,7 @@
         "budget": "170000000"
     },
     {
-        "movie": "Captain America: The Winter Soldier",
+        "movie": "The Winter Soldier",
         "company": "Marvel",
         "imdb": 7.7,
         "gross": "714421503",
@@ -96,7 +96,7 @@
         "budget": "130000000"
     },
     {
-        "movie": "Captain America: Civil War",
+        "movie": "Civil War",
         "company": "Marvel",
         "imdb": 7.8,
         "gross": "1153296293",
@@ -256,7 +256,7 @@
         "budget": "225000000"
     },
     {
-        "movie": "Batman v Superman: Dawn of Justice",
+        "movie": "Dawn of Justice",
         "company": "DC",
         "imdb": 6.5,
         "gross": "873634919",
