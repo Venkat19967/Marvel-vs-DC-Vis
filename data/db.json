@@ -1,0 +1,314 @@
+[
+    {
+        "movie": "Iron Man",
+        "company": "Marvel",
+        "imdb": 7.9,
+        "gross": "585366247",
+        "year": "2008",
+        "budget": "140000000"
+    },
+    {
+        "movie": "The Incredible Hulk",
+        "company": "Marvel",
+        "imdb": 6.7,
+        "gross": "263427551",
+        "year": "2008",
+        "budget": "150000000"
+    },
+    {
+        "movie": "Iron Man 2",
+        "company": "Marvel",
+        "imdb": 7,
+        "gross": "623933331",
+        "year": "2010",
+        "budget": "200000000"
+    },
+    {
+        "movie": "Thor",
+        "company": "Marvel",
+        "imdb": 7,
+        "gross": "449326618",
+        "year": "2011",
+        "budget": "150000000"
+    },
+    {
+        "movie": "Captain America: The First Avenger",
+        "company": "Marvel",
+        "imdb": 6.9,
+        "gross": "370569774",
+        "year": "2011",
+        "budget": "140000000"
+    },
+    {
+        "movie": "The Avengers",
+        "company": "Marvel",
+        "imdb": 8,
+        "gross": "1518812988",
+        "year": "2012",
+        "budget": "220000000"
+    },
+    {
+        "movie": "Iron Man Three",
+        "company": "Marvel",
+        "imdb": 7.2,
+        "gross": "1214811252",
+        "year": "2013",
+        "budget": "200000000"
+    },
+    {
+        "movie": "Thor: The Dark World",
+        "company": "Marvel",
+        "imdb": 6.9,
+        "gross": "644783140",
+        "year": "2013",
+        "budget": "170000000"
+    },
+    {
+        "movie": "Captain America: The Winter Soldier",
+        "company": "Marvel",
+        "imdb": 7.7,
+        "gross": "714421503",
+        "year": "2014",
+        "budget": "170000000"
+    },
+    {
+        "movie": "Guardians of the Galaxy",
+        "company": "Marvel",
+        "imdb": 8,
+        "gross": "772776600",
+        "year": "2014",
+        "budget": "170000000"
+    },
+    {
+        "movie": "Avengers: Age of Ultron",
+        "company": "Marvel",
+        "imdb": 7.3,
+        "gross": "1402805868",
+        "year": "2015",
+        "budget": "250000000"
+    },
+    {
+        "movie": "Ant-Man",
+        "company": "Marvel",
+        "imdb": 7.3,
+        "gross": "519311965",
+        "year": "2015",
+        "budget": "130000000"
+    },
+    {
+        "movie": "Captain America: Civil War",
+        "company": "Marvel",
+        "imdb": 7.8,
+        "gross": "1153296293",
+        "year": "2016",
+        "budget": "250000000"
+    },
+    {
+        "movie": "Doctor Strange",
+        "company": "Marvel",
+        "imdb": 7.5,
+        "gross": "677718395",
+        "year": "2016",
+        "budget": "165000000"
+    },
+    {
+        "movie": "Guardians of the Galaxy Vol. 2",
+        "company": "Marvel",
+        "imdb": 7.6,
+        "gross": "863756051",
+        "year": "2017",
+        "budget": "200000000"
+    },
+    {
+        "movie": "Spider-Man: Homecoming",
+        "company": "Marvel",
+        "imdb": 7.4,
+        "gross": "880166924",
+        "year": "2017",
+        "budget": "175000000"
+    },
+    {
+        "movie": "Thor:Ragnarok",
+        "company": "Marvel",
+        "imdb": 7.9,
+        "gross": "853977126",
+        "year": "2017",
+        "budget": "180000000"
+    },
+    {
+        "movie": "Black Panther",
+        "company": "Marvel",
+        "imdb": 7.3,
+        "gross": "1346913161",
+        "year": "2018",
+        "budget": "200000000"
+    },
+    {
+        "movie": "Avengers: Infinity War",
+        "company": "Marvel",
+        "imdb": 8.5,
+        "gross": "2048359754",
+        "year": "2018",
+        "budget": "321000000"
+    },
+    {
+        "movie": "Ant-Man and the Wasp",
+        "company": "Marvel",
+        "imdb": 7.1,
+        "gross": "622674139",
+        "year": "2018",
+        "budget": "162000000"
+    },
+    {
+        "movie": "Captain Marve",
+        "company": "Marvel",
+        "imdb": 6.9,
+        "gross": "1128274794",
+        "year": "2019",
+        "budget": "175000000"
+    },
+    {
+        "movie": "Avengers: Endgame",
+        "company": "Marvel",
+        "imdb": 8.5,
+        "gross": "2797800564",
+        "year": "2019",
+        "budget": "356000000"
+    },
+    {
+        "movie": "Spider-Man: Far from Home",
+        "company": "Marvel",
+        "imdb": 7.6,
+        "gross": "1131927996",
+        "year": "2019",
+        "budget": "160000000"
+    },
+    {
+        "movie": "Catwoman",
+        "company": "DC",
+        "imdb": 3.3,
+        "gross": "82102379",
+        "year": "2004",
+        "budget": "100000000"
+    },
+    {
+        "movie": "Batman Begins",
+        "company": "DC",
+        "imdb": 8.2,
+        "gross": "373413297",
+        "year": "2005",
+        "budget": "150000000"
+    },
+    {
+        "movie": "Superman Returns",
+        "company": "DC",
+        "imdb": 6,
+        "gross": "391081192",
+        "year": "2006",
+        "budget": "270000000"
+    },
+    {
+        "movie": "The Dark Knight",
+        "company": "DC",
+        "imdb": 9,
+        "gross": "1004934033",
+        "year": "2008",
+        "budget": "185000000"
+    },
+    {
+        "movie": "Watchmen",
+        "company": "DC",
+        "imdb": 7.6,
+        "gross": "185258983",
+        "year": "2009",
+        "budget": "130000000"
+    },
+    {
+        "movie": "Jonah Hex",
+        "company": "DC",
+        "imdb": 4.7,
+        "gross": "10903312",
+        "year": "2010",
+        "budget": "47000000"
+    },
+    {
+        "movie": "Green Lantern",
+        "company": "DC",
+        "imdb": 5.5,
+        "gross": "219851172",
+        "year": "2011",
+        "budget": "200000000"
+    },
+    {
+        "movie": "The Dark Knight Rises",
+        "company": "DC",
+        "imdb": 8.4,
+        "gross": "1081041287",
+        "year": "2012",
+        "budget": "250000000"
+    },
+    {
+        "movie": "Man of Steel",
+        "company": "DC",
+        "imdb": 7.1,
+        "gross": "668045518",
+        "year": "2013",
+        "budget": "225000000"
+    },
+    {
+        "movie": "Batman v Superman: Dawn of Justice",
+        "company": "DC",
+        "imdb": 6.5,
+        "gross": "873634919",
+        "year": "2016",
+        "budget": "250000000"
+    },
+    {
+        "movie": "Suicide Squad",
+        "company": "DC",
+        "imdb": 6,
+        "gross": "746846894",
+        "year": "2016",
+        "budget": "175000000"
+    },
+    {
+        "movie": "Wonder Woman",
+        "company": "DC",
+        "imdb": 7.4,
+        "gross": "821847012",
+        "year": "2017",
+        "budget": "149000000"
+    },
+    {
+        "movie": "Justice League",
+        "company": "DC",
+        "imdb": 6.4,
+        "gross": "657924295",
+        "year": "2017",
+        "budget": "300000000"
+    },
+    {
+        "movie": "Aquaman",
+        "company": "DC",
+        "imdb": 7,
+        "gross": "1148161807",
+        "year": "2018",
+        "budget": "160000000"
+    },
+    {
+        "movie": "Shazam!",
+        "company": "DC",
+        "imdb": 7.1,
+        "gross": "364571656",
+        "year": "2019",
+        "budget": "100000000"
+    },
+    {
+        "movie": "Joker",
+        "company": "DC",
+        "imdb": 8.7,
+        "gross": "1060504580",
+        "year": "2019",
+        "budget": "55000000"
+    }
+]
