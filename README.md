@@ -1,3 +1,6 @@
+# Firebase URL:
+[Marvel vs DC -- Argumentative Vis](https://marvel-vs-dc-45dcb.web.app/)
+
 # Argumentative Vis
 
 In this homework, you will create a pair of data visualizations that promote opposing viewpoints using the same base dataset.
